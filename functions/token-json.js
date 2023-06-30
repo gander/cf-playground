@@ -1,7 +1,14 @@
-import {sign} from '@tsndr/cloudflare-worker-jwt'
+import * as jose from 'jose'
 
 export const onRequest = async (context) => {
-    const token = await sign({sub: ""}, context.env.VITE_TOKEN_HMAC_SECRET_KEY);
+
+    const secret = new TextEncoder().encode(context.env.VITE_TOKEN_HMAC_SECRET_KEY);
+
+    const token = await new jose.SignJWT({sub: ""})
+        .setProtectedHeader({ alg: 'HS256' })
+        .setIssuedAt()
+        .sign(secret)
+
     return new Response(JSON.stringify({token}));
 }
 
