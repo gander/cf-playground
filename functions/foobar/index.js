@@ -1,3 +1,3 @@
 export function onRequest(context) {
-    return new Response(JSON.stringify({index: context.params}));
+    return new Response(JSON.stringify({context}));
 }
