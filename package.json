@@ -10,7 +10,6 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false"
   },
   "dependencies": {
-    "@tsndr/cloudflare-worker-jwt": "^2.2.1",
     "jose": "^4.14.4",
     "vue": "^3.3.4"
   },
