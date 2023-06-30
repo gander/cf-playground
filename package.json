@@ -10,10 +10,13 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false"
   },
   "dependencies": {
+    "jsonwebtoken": "^9.0.0",
     "vue": "^3.3.4"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20230518.0",
     "@tsconfig/node18": "^2.0.1",
+    "@types/jsonwebtoken": "^9.0.2",
     "@types/node": "^18.16.17",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue/tsconfig": "^0.4.0",
