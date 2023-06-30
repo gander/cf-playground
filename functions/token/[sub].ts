@@ -10,14 +10,4 @@ export const onRequest: PagesFunction<Env> = async ({env: {VITE_TOKEN_HMAC_SECRE
     return new Response(JSON.stringify({sub, token}, null, 2));
 };
 
-export const onRequestOptions: PagesFunction<Env> = async () => {
-    return new Response(null, {
-        status: 204,
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Headers': '*',
-            'Access-Control-Allow-Methods': 'GET, OPTIONS',
-            'Access-Control-Max-Age': '86400',
-        },
-    });
-};
+
