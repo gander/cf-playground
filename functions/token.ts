@@ -6,12 +6,7 @@ interface Env {
 
 export const onRequest: PagesFunction<Env> = async (context) => {
     const secret = new TextEncoder().encode(context.env.VITE_TOKEN_HMAC_SECRET_KEY);
-
-    const token = await new jose.SignJWT({sub: ""})
-        .setProtectedHeader({ alg: 'HS256' })
-        .setIssuedAt()
-        .sign(secret)
-
+    const token = await new jose.SignJWT({sub: ""}).setProtectedHeader({alg: 'HS256'}).sign(secret)
     return new Response(token);
 }
 
